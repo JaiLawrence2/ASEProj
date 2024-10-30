@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(24, 19, 13);
+  
+  }
+  
+  
+  #container {
+  
+      height: 90vh;
+      width: 90vw;
+      position: center;
+      background-image: url(hardwoodfloor.jpg);
+      background-size: 100% 100%;
+      border: 1px solid #00000000;
+      background-color: rgb(184, 183, 183);
+    }
+  
+    .table {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background-color: #5adb7a;
+      border: 1px solid #ccc;
+      cursor: move;
+    }
+  
+    .seat {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #5adb7a;
+      border: 1px solid #ccc;
+      cursor: move;
+    }
+  
+    .dragging {
+      opacity: 0.5;
+    }
+  
+    button {
+      width: 100px;
+      height: 50px;
+      background-color: rgb(92, 143, 95);
+  
+  
+    }
