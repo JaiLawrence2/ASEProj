@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS System</title>
+  <script src="pos.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .menu-item {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      width: 150px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .menu-item:hover {
+      background-color: #e2e6ea;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item p {
+      margin: 5px 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .order-summary {
+      margin-top: 20px;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .order-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .order-items li {
+      margin: 5px 0;
+      padding: 5px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>POS System</header>
+  <div class="container">
+    <label for="tableNumber">Table Number:</label>
+    <input type="number" id="tableNumber" placeholder="Enter table number" required>
+
+    <h3>Select Menu Items</h3>
+    <div class="menu">
+      <div class="menu-item" onclick="addItem('burger', 8.99)">
+        <p>Burger</p>
+        <p>$8.99</p>
+      </div>
+      <div class="menu-item" onclick="addItem('fries', 3.49)">
+        <p>Fries</p>
+        <p>$3.49</p>
+      </div>
+      <div class="menu-item" onclick="addItem('pizza', 12.99)">
+        <p>Pizza</p>
+        <p>$12.99</p>
+      </div>
+      <div class="menu-item" onclick="addItem('pasta', 10.49)">
+        <p>Pasta</p>
+        <p>$10.49</p>
+      </div>
+      <div class="menu-item" onclick="addItem('soda', 2.49)">
+        <p>Soda</p>
+        <p>$2.49</p>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ul class="order-items" id="orderItems"></ul>
+      <div class="total" id="totalPrice">Total: $<span id="actualtotal">0.00</span></div>
+      <button onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+</body>
+</html>
+
